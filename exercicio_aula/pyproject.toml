@@ -1,0 +1,27 @@
+[project]
+name = "c114"
+version = "0.1.0"
+description = "Projeto simples em Python"
+authors = [
+    {name = "Pedro Tiso Vinhas Mesquita"}
+]
+readme = "README.md"
+requires-python = ">=3.13"
+dependencies = [
+    "typer (>=0.16.0,<0.17.0)",
+    "rich (>=14.1.0,<15.0.0)"
+]
+
+package-mode = false
+
+[build-system]
+requires = ["poetry-core>=2.0.0,<3.0.0"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.poetry]
+packages = [
+    { include = "meu_projeto", from = "src" }
+]
+
+[tool.poetry.scripts]
+meucomando = "meu_projeto.cli:app"
