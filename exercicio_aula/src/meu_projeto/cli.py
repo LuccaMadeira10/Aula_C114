@@ -24,6 +24,7 @@ def stats_cmd(numeros: list[float]):
     t.add_row("Máximo", str(max(numeros)))
     t.add_row("Média", f"{stats.mean(numeros):.2f}")
     t.add_row("Mediana", f"{stats.median(numeros):.2f}")
+    t.add_row("Desvio Padrão", f"{stats.stdev(numeros):.2f}")
 
     console.print(t)
 
