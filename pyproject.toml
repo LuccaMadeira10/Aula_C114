@@ -1,0 +1,27 @@
+[tool.poetry]
+name = "engenharia-de-software"
+version = "0.1.0"
+description = "Ferramenta de linha de comando (CLI) em Python para demonstrar práticas profissionais de Engenharia de Software: estrutura em pacotes (padrão src/), uso de Typer para interface de terminal e Rich para saída formatada, incluindo comandos de saudação e estatísticas numéricas, com foco em código limpo e extensível."
+authors = ["Lucca Marcondes Madeira"]
+readme = "README.md"
+packages = [{ include = "meu_projeto", from = "src" }]
+
+[tool.poetry.dependencies]
+python = ">=3.13,<4.0"
+typer = ">=0.17.3,<0.18.0"
+rich  = ">=14.1.0,<15.0.0"
+
+[tool.poetry.scripts]
+# Comando para executar sua CLI:
+engsoft = "meu_projeto.cli:app"
+
+[tool.poetry.group.dev.dependencies]
+pytest = "^8.4.1"
+pytest-cov = "^6.2.1"
+
+[build-system]
+requires = ["poetry-core>=2.0.0,<3.0.0"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.pytest.ini_options]
+addopts = "-q"
