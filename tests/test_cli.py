@@ -114,8 +114,8 @@ def test_hello_unicode():
 # 1) Apenas um número: statistics.stdev exige >=2 dados -> deve falhar e mencionar "two data points".
 def test_stats_cmd_um_numero_quebra_stdev():
     res = runner.invoke(app, ["stats-cmd", "42"])
-    assert res.exit_code == 0
-    #assert res.exit_code != 0
+   
+    assert res.exit_code != 0
     assert "two data points" in (res.output + str(res.exception)).lower()
 
 # 2) Sem nenhum número: Typer deve reclamar de argumento obrigatório.
